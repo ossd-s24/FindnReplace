@@ -16,7 +16,7 @@
       }
     ],
   
-    "permissions": ["activeTab"],
+    //"permissions": ["activeTab"],
   
     "browser_action": {
       "default_icon": "icons/findnreplace-32.png",
