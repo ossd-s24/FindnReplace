@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "FindnReplace",
+    "version": "1.0",
+  
+    "description": "Searches for text, then replaces it with new text",
+    "homepage_url": "https://github.com/ossd-s24/FindnReplace",
+    "icons": {
+      "48": "icons/findnreplace-48.png"
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["findnreplace.js"]
+      }
+    ],
+  
+    "permissions": ["activeTab"],
+  
+    "browser_action": {
+      "default_icon": "icons/findnreplace-32.png",
+      "default_title": "FindnReplace",
+      "default_popup": "popup/findnreplace.html"
+    }
+  
+  }
