@@ -16,12 +16,16 @@
       }
     ],
   
-    //"permissions": ["activeTab"],
+    "permissions": ["activeTab"],
   
     "browser_action": {
       "default_icon": "icons/findnreplace-32.png",
       "default_title": "FindnReplace",
       "default_popup": "popup/findnreplace.html"
-    }
+    },
+
+    "web_accessible_resources": [
+      "replacement.txt"
+    ]
   
   }
