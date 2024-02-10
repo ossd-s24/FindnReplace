@@ -3,8 +3,8 @@ document.addEventListener("submit", (e) => {
 
     let find = document.getElementById('find');
     let replace = document.getElementById('replace');
-    findText = find.value
-    replaceText = replace.value
+    findText = find.value;
+    replaceText = replace.value;
 
     browser.tabs
         .query({ active: true, currentWindow: true })
@@ -12,8 +12,8 @@ document.addEventListener("submit", (e) => {
         .catch(reportError);
 
     function replaceFunc(tabs){
-      let passVal = 'const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); while(walker.nextNode()) { walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(\'' + findText + '\',\'' + replaceText + '\');}'
-      console.log(passVal)
+      let passVal = 'walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); while(walker.nextNode()) { walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(\'' + findText + '\',\'' + replaceText + '\');}';
+      console.log(passVal);
       browser.tabs.executeScript({
         code: passVal
       })
