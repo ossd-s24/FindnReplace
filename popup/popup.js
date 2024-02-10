@@ -6,6 +6,7 @@ document.addEventListener("submit", (e) => {
     findText = find.value;
     replaceText = replace.value;
 
+    
     browser.tabs
         .query({ active: true, currentWindow: true })
         .then(replaceFunc)
