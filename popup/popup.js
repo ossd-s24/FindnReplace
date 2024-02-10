@@ -6,13 +6,15 @@ document.addEventListener("submit", (e) => {
     findText = find.value
     replaceText = replace.value
 
+    
     browser.tabs
         .query({ active: true, currentWindow: true })
         .then(replaceFunc)
         .catch(reportError);
 
     function replaceFunc(tabs){
-      let passVal = 'const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); while(walker.nextNode()) { walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(\'' + findText + '\',\'' + replaceText + '\');}'
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let passVal = 'walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); while(walker.nextNode()) { walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(\'' + findText + '\',\'' + replaceText + '\');}'
       console.log(passVal)
       browser.tabs.executeScript({
         code: passVal
